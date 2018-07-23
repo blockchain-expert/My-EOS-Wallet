@@ -1,0 +1,207 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="Wallet for EOS allows users to manage their custom tokens in EOS platform. Avail this new technology of tracking your crypto coin balances with My EOS Wallet." />
+    <meta name="keywords" content="eos, blockchain, blockchainexpert, wallet, walletforeos, eos wallet, my wallet, my eos wallet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <!-- Fontawsome CSS -->
+    <link href="css/fontawesome-all.min.css" rel="stylesheet" type="text/css">
+    <!-- Header CSS -->
+    <link rel='stylesheet prefetch' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+    <!-- Banner CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- Particle CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="js/wallet.js"></script>
+    <title>My EOS Wallet</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122475030-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122475030-1');
+</script>
+</head>
+<body  id="particles-js">
+    <div class="container-fluid pt-3">
+
+        <div class="container">
+            <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-7 float-left padd0">
+                <img src="images/logo-1.png" alt="logo" class="img-fluid logo-img">
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-5 float-left">
+                <button class="about" id="about">About</button>
+
+                <!-- modal -->
+                <div class="modal-overlay">
+                    <div class="modal">
+
+                        <a class="close-modal">
+                            <svg viewBox="0 0 20 20">
+                                <path fill="#000000" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                            </svg>
+                        </a>
+                        <!-- close modal -->
+
+                        <div class="modal-content">
+                            <h3>My EOS Wallet</h3>
+                            <p>My EOS Wallet</strong> allows users to manage their custom tokens in EOS platform. One can access to their crypto token balance by simply entering the token contract name and their account name( token holder ) in respective fields. This platform works for tokens in both Main Net and Test net. Avail this new technology of tracking your crypto coin balances with <strong style="font-weight: bold;color: black;"> My EOS Wallet</strong>.</p>
+                        </div>
+                        <!-- content -->
+
+                    </div>
+                    <!-- modal -->
+                </div>
+                <!-- overlay -->
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="container-fluid p-0"  id="particles-js">
+        <div class="container content-container">
+        <h1>Know Your Token Balance with My EOS Wallet </h1>
+        <p>A Native Support for User Generated tokens in EOS</p>
+
+        <div class="login-form">
+                <div class="sign-in-htm">
+                    <div class="group">
+                        <label for="contract" class="label">Token Contract Name</label>
+                        <input id="contract" maxlength="20" type="text" class="input">
+                        <label id="err1" for="account" class="label"></label>
+                    </div>
+                    <div class="group">
+                        <label for="account" class="label">Account name</label>
+                        <input id="account" maxlength="20" type="text" class="input">
+                        <label id="err2" for="account" class="label"></label>
+                    </div>
+                    <div class="group" style=" height: 30px; ">
+                        <div class="">
+                            <button id="nw" type="button" class="btn btn-toggle" class="btn active" name="nws" data-toggle="button" value="main" aria-pressed="false" autocomplete="on">
+                                <div class="handle"></div>
+                            </button>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="group">
+                        <input type="submit" class="button btn" value="Check Balance" onclick="check()">
+                    </div>
+                    <div class="balance">
+                        <p id="balField" style=" float: left; top: 96%; text-transform: uppercase;font-size: 14px; "> Balance</p>
+                        <h1 id="balance"></h1>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="container">
+            <div class="panel-list-content">
+                <div class="panel-wrap">
+                  <input id="m1" type="checkbox" class="panel">
+                  <div class="plus">+</div>
+                  <label for="m1" class="panel-title">Terms & Conditions</label>
+                  <div class="panel-content">
+                    This Privacy Policy describes how “My EOS Wallet” collects and processes information.<br><br>
+                    <strong style="font-weight: bold;color: black;">PLEASE READ THIS PRIVACY POLICY CAREFULLY WHILE USING MY EOS WALLET SERVICES. YOU ACKNOWLEDGE THAT YOU HAVE READ AND UNDERSTAND THIS PRIVACY POLICY.</strong><br><br>
+                     
+                    In this Privacy Policy, to “process” information means to perform any operation on the information, whether or not by automated means, such as collection, recording, organizing, storing, adapting, use, disclosure, combining, erasing or destroying.<br><br>
+                    We do not use any account credentials for unauthorized purposes rather than administering your account and providing the services to you. We keep your personal information in identifiable form only as long as we need it for the lawful purpose for which we collected it. <br><br>
+                    The account information is only accessed for communicating to the client requisites. It is not a transaction involved in the request process.    
+                    My EOS Wallet retrieves data from block producers. We cannot guarantee information authenticity transmitted to or through the Services.  Our information is subjected to go wrong or incorrect if block producers are out of synchronization. Any misleading, inappropriate data on the account of same, will not come under the jurisdiction of My EOS Wallet.<br><br>
+
+                  </div>
+                </div>
+                
+        </div>
+        <div class="clearfix"></div>
+        </div>
+        <footer>
+            <div class="container">
+                    <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-4 col-12 float-left">
+                    <p>
+                        <b>Cybrosys Limited</b>
+                        <br>
+                        2 Sheen Road,
+                        <br>
+                        Richmond, London,
+                        <br>
+                        England - TW9 1AE
+                    </p>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
+                        <div class="social-btns">
+                        <a class="btn facebook" href="#"><i class="fab fa-facebook"></i></a>
+                        <a class="btn twitter" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn google" href="#"><i class="fab fa-google"></i></a>
+                        <a class="btn dribbble" href="#"><i class="fab fa-dribbble"></i></a>
+                        <a class="btn skype" href="#"><i class="fab fa-skype"></i></a>
+                        </div>
+                        <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+                <div class="row">
+                        <p class="copyright">Powerd by <a href="http://blockchainexpert.uk" target="_blank">Blockchianexpert</a></p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+            </footer>
+    </div>
+    <div class="clearfix"></div>
+
+    
+    <script src='https://cldup.com/S6Ptkwu_qA.js'></script>
+    <script src="js/particle.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/all.js"></script>
+    <!-- //jQuery first, then Popper.js, then Bootstrap JS -->
+    <script>
+        var elements = $('.modal-overlay, .modal');
+
+        $('#about').click(function () {
+            elements.addClass('active');
+        });
+
+        $('.close-modal').click(function () {
+            elements.removeClass('active');
+        });
+    </script>
+    <!-- Default Statcounter code for Walletfor EOS http://www.walletforeos.com/ -->
+<script type="text/javascript">
+    var sc_project=11764254; 
+    var sc_invisible=1; 
+    var sc_security="e66e9909"; 
+    </script>
+    <script type="text/javascript"
+    src="https://www.statcounter.com/counter/counter.js"
+    async></script>
+    <noscript><div class="statcounter"><a title="Web Analytics"
+    href="http://statcounter.com/" target="_blank"><img
+    class="statcounter"
+    src="//c.statcounter.com/11764254/0/e66e9909/1/" alt="Web
+    Analytics"></a></div></noscript>
+    <!-- End of Statcounter Code -->
+</body>
+
+</html>
