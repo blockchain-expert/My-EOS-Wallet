@@ -7,13 +7,8 @@ $( document ).ready(function() {
 var url =""
 
 function networkSelector(){
-
-	if ($("#nw").hasClass("active")) {
-		url = "http://dolphin.eosblocksmith.io";
-	}
-	else{
-		url = "http://106.10.42.238";
-	}
+	if ($("#nw").hasClass("active"))	url = "http://dolphin.eosblocksmith.io";
+	else	url = "http://106.10.42.238";
 }
 
 function check() {
@@ -30,12 +25,10 @@ function check() {
 		$("#err2").text("Input required");
 		return;
 	}
-	 var kk = contractExist(contract);
-		console.log(kk);
+	var kk = contractExist(contract);
 	if(contractExist(contract) || accExist(account)){
 		return;
 	}
-	//accExist(account);
 	var data = JSON.stringify({
 		"scope": account,
 		"code": contract,
@@ -55,17 +48,13 @@ function check() {
     		{
     			b = "Result not found";
     		}
-    		//if(bal.code == 500) console.log("no ba")
-    		//console.log(b);
     		$("#balance").text(b);
   			$("#balField").show();
-
 		}
 	});
 	xhr.open("POST", url+":8888/v1/chain/get_table_rows");
 	xhr.send(data);
 }
-
 
 function accExist(account){
 	var status = false;
