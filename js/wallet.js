@@ -21,11 +21,11 @@ var isMainnet = false;
 function networkSelector(){
 	if ($("#nw").hasClass("active")){
 		isMainnet = false;
-		url = "https://api.jungle.alohaeos.com/v1/chain/get_info";  // Test NET
+		url = "https://api.jungle.alohaeos.com:443";  // Test NET
 	}
 	else{
 		isMainnet = true;
-		url = "https://nodes.get-scatter.com/v1/chain/get_info";       // MAIN NET
+		url = "https://nodes.get-scatter.com";       // MAIN NET
 	}
 }
 
