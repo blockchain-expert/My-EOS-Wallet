@@ -140,7 +140,6 @@ function updateChart() {
 			$("#ramMax").html(ram_quota_unit);
 		}
 		/////////////////////////////////////////////
-
 		if (netWidth >= net_usageper) {
 			cpuBool = true;
 		} else {
@@ -149,9 +148,7 @@ function updateChart() {
 			$("#netUsed").html(net_used_unit+" used");
 			$("#netMax").html(net_limit_unit);
 		}
-
 		/////////////////////////////////////////////
-
 		if (cpuWidth >= cpu_usageper) {
 			netBool = true;
 		} else {
@@ -169,6 +166,7 @@ function updateChart() {
 var account, contract;
 
 function check() {
+	$("#err6").text("");
 	networkSelector();
 	$("#err1").text("");
 	$("#err2").text("");
@@ -224,15 +222,15 @@ function check() {
 			$("#quantity").val("");
 			$("#recipient").val("");
 
-			try{
-				checkIdentity();
+			if(scatter.identity != null) {
+				$("#detatchBtn").show();
+        		$("#integrateBtn").hide();
 			}
-			catch(e){
+			else {
 				$("#detatchBtn").hide();
-	        	$("#integrateBtn").show();
+        		$("#integrateBtn").show();
 			}
 			window.location.hash = '#details';
-			
 		}
 	});
 	xhr.open("POST", url+"/v1/chain/get_table_rows");

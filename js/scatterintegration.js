@@ -1,4 +1,10 @@
-var scatterConnected, scatterAccount, account;
+var scatterConnected, scatterAccount, account, requiredFields;
+scatter.connect("Wallet For EOS").then(function(connected){
+    console.log('Scatter connected');
+    scatterConnected = connected;
+}).catch(function(x){
+    console.log('x', x);
+});
 function signIn(){
     if(!scatterConnected)  {
         $("#viewTx").hide();
@@ -13,32 +19,57 @@ function signIn(){
         $("#sign-in").hide();
         return;
     }
-    network = {
+    networkTest = {
         protocol:'http', 
         blockchain:'eos',
         host:'52.199.125.75',
         port:8888,
         chainId:"038f4b0fc8ff18a4f0842a8f0564611f6e96e8535901dd45e43ac8691a1c4dca",
     };
-    const requiredFields = {
-        accounts:[network]
+    networkMain = {
+        protocol:'https', 
+        blockchain:'eos',
+        host:'nodes.get-scatter.com',
+        port:443,
+        chainId:"aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906",
     };
-    
-    scatter.getIdentity(requiredFields).then(function(id){
-        account = id.accounts.find(function(x){ return x.blockchain === 'eos' });
-        scatterAccount = account.name;
-        $("#account").val(account.name);
-        $("#detatchBtn").show();
-        $("#integrateBtn").hide();
-        $("#fromDiv").show();
-        $("#from").text(account.name);
-    }).catch(function(e) {
-        console.log(e);
-    }) 
+    networkSelector();
+    if(isMainnet) {
+        requiredFields = {
+            accounts:[networkMain]
+        };
+    }
+    else {
+        requiredFields = {
+            accounts:[networkTest]
+        };
+    }
+    try {
+        scatter.forgetIdentity().then(function(){scatter.getIdentity(requiredFields).then(function(id){
+            account = id.accounts.find(function(x){ return x.blockchain === 'eos' });
+            scatterAccount = account.name;
+            $("#account").val(account.name);
+            $("#detatchBtn").show();
+            $("#integrateBtn").hide();
+            $("#fromDiv").show();
+            $("#from").text(account.name);
+        })});
+    }
+    catch(err){
+        scatter.getIdentity(requiredFields).then(function(id){
+            account = id.accounts.find(function(x){ return x.blockchain === 'eos' });
+            scatterAccount = account.name;
+            $("#account").val(account.name);
+            $("#detatchBtn").show();
+            $("#integrateBtn").hide();
+            $("#fromDiv").show();
+            $("#from").text(account.name);
+        })
+    }
 }
 
 function checkIdentity(){
-    scatter.getIdentity({accounts:[network]}).then(function(){
+    scatter.getIdentity(requiredFields).then(function(){
         $("#detatchBtn").show();
         $("#integrateBtn").hide();
         return true;
@@ -128,8 +159,10 @@ function transferFn(){
     const options = {
              authorization: [ `${accountScatter.name}@${accountScatter.authority}`]
               };
+    if(isMainnet)   var eos = scatter.eos(networkMain, Eos, options);
+    else    var eos = scatter.eos(networkTest, Eos, options);
 
-    var eos = scatter.eos(network, Eos, options);
+    
     //const account = scatter.identity.accounts.find(function(x){ return x.blockchain === 'eos' });
     setTimeout(function(){
         if(!st){
