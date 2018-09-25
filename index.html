@@ -1,6 +1,5 @@
 ﻿<!doctype html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -11,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
     <!-- Search Engine -->
-    <meta name="description" content="Wallet for EOS allows users to manage their custom tokens in EOS platform. Avail this new technology of tracking your crypto coin balances with My EOS Wallet.">
     <meta name="image" content="http://www.walletforeos.com/images/wallet-for-eos-social.png">
     <!-- Schema.org for Google -->
     <meta itemprop="name" content="Wallet for EOS - Custom Token Balance Checker">
@@ -45,7 +43,6 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Particle CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="js/wallet.js"></script>
@@ -76,10 +73,9 @@
         });
     </script>
 </head>
-
 <body id="particles-js">
     <div id="entry"></div>
-    <div class="preloader_container" id="preloader">
+    <div class="preloader_container" style="display:none" id="preloader">
         <div class="preloader">
             <div class="pl_square">
                 <img src="https://walletforeos.com/images/logo-1.png" class="pl_logo">
@@ -89,11 +85,10 @@
     <div class="container-fluid pt-3">
         <div class="container">
             <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-7 float-left padd0">
-                <a href="index.html"><img src="images/logo-1.png" alt="logo" class="img-fluid logo-img"></a>
+                <a href="https://walletforeos.com"><img src="images/logo-1.png" alt="logo" class="img-fluid logo-img"></a>
             </div>
             <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-5 float-left">
                 <button class="about" id="about">About</button>
-
                 <!-- modal -->
                 <div class="modal-overlay" id="a3">
                     <div class="modal" id="a4">
@@ -103,7 +98,6 @@
                             </svg>
                         </a>
                         <!-- close modal -->
-
                         <div class="modal-content">
                             <h3>My EOS Wallet</h3>
                             <p><strong style="font-weight: bold;color: black;">My EOS Wallet</strong> allows users to manage their custom tokens in EOS platform. One can access
@@ -117,8 +111,6 @@
                     <!-- modal -->
                 </div>
                 <!-- overlay -->
-
-
                 <!-- modal 2222222222222-->
                 <div class="modal-overlay" id="a1">
                     <div class="modal" id="a2">
@@ -128,7 +120,6 @@
                             </svg>
                         </a>
                         <!-- close modal -->
-
                         <div class="modal-content">
                             <p id="tick" style="display: none;"><i class="far fa-check-circle"></i></p>
                             <p id="install" style="display: none;"><i class="fas fa-download"></i></p>
@@ -143,9 +134,6 @@
                     <!-- modal -->
                 </div>
                 <!-- overlay -->
-
-
-
             </div>
             <div class="clearfix"></div>
         </div>
@@ -180,8 +168,7 @@
                         <input type="submit" class="button btn btn-scatter" value="Integrate scatter" onclick="signIn()"style=" width: 31%; font-size: 12px; ">
                         <label id="err2" for="account" class="label"></label>
                         
-                    </div>
-                    
+                    </div>                  
                     
                     <div class="group">
                         <input type="submit" id="check" class="button btn" value="Check Balance" onclick="check()">
@@ -195,12 +182,9 @@
         </div>
         <div class="clearfix"></div>
         <div class="container">
-            <div class="row balance-details" id="details" style="display:none">
-
-                
+            <div class="row balance-details" id="details" style="display:none">                
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 float-left">
-                    <h2>Account info</h2>
-                    
+                    <h2>Account info</h2>                    
                     <h6>Ram</h6>
                     <div class="w3-container">
                         <div class="w3-light-grey w3-round-xlarge">
@@ -234,17 +218,14 @@
                         <div id="cpuUsed" class="value-chart-max value-percentage"></div>
                     </div>
                     <h6 id="eosBalance">EOS</h6>
-
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 float-left">
-
                     <div class="balance">
                         <p id="balField" style=" float: left; top: 96%; text-transform: uppercase;font-size: 14px;    text-align: center; "> Balance</p>
                         <h1 id="balance"></h1>
                     </div>
                     <div class="another">
-                        <input type="button" class="button btn" value="Check another result" onclick="checkAnother()">
-                    
+                        <input type="button" class="button btn" value="Check another result" onclick="checkAnother()">                    
                     </div>
                     <div class="refresh">
                         <input type="" class=" fas fa-sync-alt" value="" onclick="check()">
@@ -262,23 +243,18 @@
                         <p style=" font-size: 12px; float: left; width: auto; margin-right: 6px; ">From : </p>
                         <label id="from"></label>                        
                     </div>
-                    <div class="group transfer-token-form">
-                        
+                    <div class="group transfer-token-form">                        
                         <input id="recipient" maxlength="12" type="text" class="input transfer-input" placeholder="Enter recipient name">
                         <label id="err3" for="recipient" class="label"></label>                        
                     </div>
-                    <div class="group transfer-token-form">
-                        
+                    <div class="group transfer-token-form">                        
                         <input id="quantity" maxlength="40" type="text" class="input transfer-input">
-                        <label id="err4" for="quantity" class="label"></label>
-                       
+                        <label id="err4" for="quantity" class="label"></label>                       
                     </div>
                     <div class="group transfer-btn">
                         <input type="submit" id="transferBtn" class="button btn" value="Transfer" onclick="transferFn()">
                     </div>
-                </div>
-               
-                
+                </div> 
             </div>
             <div class="clearfix"></div>
         </div>
@@ -351,7 +327,7 @@
                 <div class="clearfix"></div>
                 <div class="row">
                     <p class="copyright">Powerd by
-                        <a href="https://www.blockchainexpert.uk" target="_blank">Blockchianexpert</a>
+                        <a href="http://www.blockchainexpert.uk" target="_blank">Blockchianexpert</a>
                     </p>
                 </div>
                 <div class="clearfix"></div>
@@ -360,18 +336,8 @@
         </footer>
     </div>
     <div class="clearfix"></div>
-    <!-- Chart JavaScript -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.7.0/nv.d3.min.js'></script>
-    <script src="js/chart.js"></script>
-
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
-    <script>
-        $(window).ready(function() {
-             $('#preloader').hide();
-        });
-    </script>
     <script>
         $('.value').each(function () {
             var text = $(this).text();
@@ -412,8 +378,7 @@
     <noscript>
         <div class="statcounter">
             <a title="Web Analytics" href="http://statcounter.com/" target="_blank">
-                <img class="statcounter" src="//c.statcounter.com/11764254/0/e66e9909/1/" alt="Web
-    Analytics">
+                <img class="statcounter" src="//c.statcounter.com/11764254/0/e66e9909/1/" alt="Web Analytics">
             </a>
         </div>
     </noscript>

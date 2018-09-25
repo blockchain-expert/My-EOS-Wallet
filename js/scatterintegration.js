@@ -1,10 +1,10 @@
 var scatterConnected, scatterAccount, account, requiredFields;
-// scatter.connect("Wallet For EOS").then(function(connected){
-//     console.log('Scatter connected');
-//     scatterConnected = connected;
-// }).catch(function(x){
-//     console.log('x', x);
-// });
+scatter.connect("Wallet For EOS").then(function(connected){
+    console.log('Scatter connected');
+    scatterConnected = connected;
+}).catch(function(x){
+    console.log('x', x);
+});
 function signIn(){
     if(!scatterConnected)  {
         $("#viewTx").hide();
@@ -110,7 +110,6 @@ function transferFn(){
         $("#errorMsg").text("Install scatter to use this functionality");
         return;
     }
-    console.log(scatter.identity);
     if(scatter.identity == null){
         $("#viewTx").hide();
         $('#a1').addClass('active');
